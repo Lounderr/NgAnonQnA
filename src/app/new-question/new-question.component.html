@@ -1,0 +1,20 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<dialog open class="bg-light">
+    <h2>New Question</h2>
+    <span class="text-muted d-block mb-3">Please submit your question.</span>
+    <form class="d-flex flex-column gap-2 justify-content-center" #loginForm="ngForm" (ngSubmit)="addQuestion()">
+        <!-- <div>
+            <label for="author" class="p-1">Author</label>
+            <input type="text" id="author" name="author" class="form-control" [(ngModel)]="author" />
+        </div> -->
+        <div>
+            <label for="question" class="p-1">Content</label>
+            <textarea type="text" id="question" name="question" class="form-control" [(ngModel)]="content" required minlength="2" maxlength="128"></textarea> 
+        </div>
+
+        <div class="d-flex justify-content-end gap-3 mt-3">
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Ask Question</button>
+        </div>
+    </form>
+</dialog>
