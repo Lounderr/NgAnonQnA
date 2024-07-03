@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Question } from '../question.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-question',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './question.component.html',
   styleUrl: './question.component.scss'
 })

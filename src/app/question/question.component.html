@@ -1,5 +1,6 @@
 <div class="question-container d-flex justify-content-between">
-    <div>
+    <div class="position-relative">
+        <time>{{ question.date | date: 'fullDate' }} | {{ question.date | date: 'mediumTime' }}</time>
         <p class="d-block">{{ question.content }}</p>
     </div>
     <button type="button" class="btn btn-success" (click)="markAsRead()">Mark as read</button>
